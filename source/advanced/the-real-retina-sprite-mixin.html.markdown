@@ -21,11 +21,13 @@ Problem is how to scale sprite, and to preserve positions which compass is calcu
 
 First we need to create sprite maps.
 
+    :::scss
     $icons: sprite-map("icons/*.png", $layout: 'smart');
     $icons2x: sprite-map("icons@2x/*.png", $spacing: 5px);
 
 For regular sprite we want to use optimised version (smart layout). In time I'm writing this, compass is not supporting to use layout and spacing in the same time, so for retina we're using spacing, because when we scale down sprite image, maybe it ends up with odd number of pixels in width or height.
 
+    :::scss
     @import "breakpoint";
 
     %sprite {
